@@ -16,7 +16,7 @@ namespace Internet_shop.Controllers
         {
             db = context;
         }
-        public async Task<IActionResult> Index1()
+        public async Task<IActionResult> Index()
         {
             return View(await db.Shirts.ToListAsync());
         }
@@ -29,7 +29,7 @@ namespace Internet_shop.Controllers
         {
             db.Shirts.Add(shirt);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index1");
+            return RedirectToAction("Index");
         }
         public IActionResult Index2()
         {
