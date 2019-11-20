@@ -5,12 +5,33 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Internet_shop.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Internet_shop.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private ShirtContext db;
+        public HomeController(ShirtContext context)
+        {
+            db = context;
+        }
+        public async Task<IActionResult> Index1()
+        {
+            return View(await db.Shirts.ToListAsync());
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Shirt shirt)
+        {
+            db.Shirts.Add(shirt);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index1");
+        }
+        public IActionResult Index2()
         {
             return View();
         }

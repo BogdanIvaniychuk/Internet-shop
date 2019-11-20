@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Internet_shop.Models;
 
-namespace EFDataApp.Models
+namespace Internet_shop.Models
 {
     public class ShirtContext : DbContext
     {

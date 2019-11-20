@@ -1,0 +1,33 @@
+﻿@model Internet_shop.Models.Shirt
+@{
+    ViewBag.Title = "Добавление майки";
+}
+    <form asp-action="create" asp-controller="home">
+        <div class="form-group">
+            <label asp-for="Name" class="control-label">Название</label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label">Описание</label>
+            <input type="text" asp-for="Description" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" class="control-label">Цена</label>
+            <input type="number" asp-for="Price" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Color" class="control-label">Колір</label>
+            <input type="text" asp-for="Color" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Size" class="control-label">Розмір</label>
+            <input type="text" asp-for="Size" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Image" class="control-label">Картинка</label>
+            <input type="text" asp-for="Image" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Send" class="btn btn-default" />
+        </div>
+    </form>

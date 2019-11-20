@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Internet_shop.Models.Shirt>
+@{
+    ViewBag.Title = "Все майки";
+}
+<a asp-action="Create">Добавить модель</a>
+<table class="table">
+    <tr><td>Модель</td><td>Цена</td><td>Описание</td><td>Колір</td><td>Розмір</td><td>Картинка</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Name</td><td>@item.Price</td><td>@item.Description</td><td>@item.Color</td><td>@item.Size</td><td><img src="@item.Image"/></td></tr>
+    }
+</table>
