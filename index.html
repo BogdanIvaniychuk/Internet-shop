@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Internet-shop</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap&subset=cyrillic"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="main-header">
+            <nav class="main-navigator">
+                <ul class="types">
+                    <li class="type-item">
+                        <p> <a href="#">Мужчинам</a></p>
+                    </li>
+                    <li class="type-item">
+                        <p> <a href="#">Женщинам</a></p>
+                    </li>
+                    <li class="type-item">
+                        <p><a href="#">Детям</a></p>
+                    </li>
+                </ul>
+                <a class="main-header-logo" href="index.html">
+                    <img src="img/nerds-logo.svg" alt="Логотип сайта">
+                </a>
+                <ul class="user-navigation">
+                    <li class="user-item">
+                        <p>
+                        <a class="login-link" href="">Войти</a>
+                    </p>
+                    </li>
+                    <li class="user-item">
+                        <p>Корзина</p>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section class="picker">
+         <ul class="items-list">
+             <li>
+                 <p>
+                 <a href="#">Новинки</a>
+                </p>
+            </li>
+             <li>
+                 <p>
+                 <a href="#">Одежда</a>
+                </p>
+            </li>
+             <li>
+                 <p>
+                     <a href="#">Обувь</a>
+                    </p>
+                </li>
+             <li>
+                 <p>
+                     <a href="#">Аксессуары</a>
+                    </p>
+                </li>
+             <li>
+                 <p>
+                     <a href="#">Бренды</a>
+                    </p>
+                </li>
+             <li>
+                 <p>
+                     <a href="#">Спорт</a>
+                    </p>
+                </li>
+             <li>
+                 <p>
+                     <a href="#">Красота</a>
+                    </p>
+                </li>
+             <li>
+                 <p>
+                     <a href="#">Дом</a>
+                    </p>
+                </li>
+         </ul>
+         <form class="seatch-form" action="base.php" method="POST"> <!--Тут походу має бути якийсь ваш файл-->
+            <p>
+            <label for="main-search" class="visually-hidden">Окно поиска</label>
+           <input type="text" name="search" class="main-search-user" id="main-search" placeholder="Поиск">
+        </p>
+        <button class="search-button" type="submit"></button>
+         </form> 
+        </section>
+    </div>
+    <section class="modal modal-login ">
+            <h2>Личный кабинет</h2>
+            <p class="modal-description">Введите свой логин и пароль.</p>
+            <form action="form.php" class="login-form" method="POST">
+                <p>
+                    <label for="user-login" class="visually-hidden">Логин</label>
+                    <input type="text" id="user-login" class="login-icon-user" name="login" placeholder="Логин">
+                </p>
+                <p>
+                    <label for="user-password" class="visually-hidden">Пароль</label>
+                    <input type="password" id="user-password" class="login-icon-password" name="password"
+                        placeholder="Пароль">
+                </p>
+                <p class="login-password-info">
+                    <label class="login-checkbox">
+                        <input type="checkbox" name="remember" class="visually-hidden">
+                        <span class="checkbox-indicator"></span>
+                        Запомните меня</label>
+                    <a href="#" class="restore">Я забыл пароль!</a>
+                </p>
+                <button class="button" type="submit">Войти</button>
+            </form>
+            <button class="modal-close" type="button">Закрыть</button>
+        </section>
+        <script src="js/popup.js"></script>
+</body>
+
+</html>
