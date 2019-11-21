@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Internet_shop.Models.Human
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -94,42 +95,65 @@
             </form>
         </section>
     </div>
-    <section class="modal modal-login ">
+
+    <section class="modal modal-login">
         <h2>Личный кабинет</h2>
         <p class="modal-description">Введите свой логин и пароль.</p>
-        <form action="form.php" class="login-form" method="POST">
-            <p>
-                <label for="user-login" class="visually-hidden">Логин</label>
-                <input type="text" id="user-login" class="login-icon-user" name="login" placeholder="Логин">
-            </p>
-            <p>
-                <label for="user-password" class="visually-hidden">Пароль</label>
-                <input type="password" id="user-password" class="login-icon-password" name="password"
-                       placeholder="Пароль">
-            </p>
-            <p class="login-password-info">
-                <label class="login-checkbox">
-                    <input type="checkbox" name="remember" class="visually-hidden">
-                    <span class="checkbox-indicator"></span>
-                    Запомните меня
-                </label>
-                <a href="#" class="restore">Я забыл пароль!</a>
-            </p>
-            <button class="button" type="submit">Войти</button>
+        <form asp-action="create" asp-controller="home">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Ім'я</label>
+                <input type="text" asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Mail" class="control-label">Пошта</label>
+                <input type="text" asp-for="Mail" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Пароль</label>
+                <input type="text" asp-for="Password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ввійти" class="btn btn-default" />
+            </div>
         </form>
-        <button class="modal-close" type="button">Закрыть</button>
     </section>
+
+    @*<section class="modal modal-login ">
+            <h2>Личный кабинет</h2>
+            <p class="modal-description">Введите свой логин и пароль.</p>
+            <form action="form.php" class="login-form" method="POST">
+                <p>
+                    <label for="user-login" class="visually-hidden">Логин</label>
+                    <input type="text" id="user-login" class="login-icon-user" name="login" placeholder="Логин">
+                </p>
+                <p>
+                    <label for="user-password" class="visually-hidden">Пароль</label>
+                    <input type="password" id="user-password" class="login-icon-password" name="password"
+                           placeholder="Пароль">
+                </p>
+                <p class="login-password-info">
+                    <label class="login-checkbox">
+                        <input type="checkbox" name="remember" class="visually-hidden">
+                        <span class="checkbox-indicator"></span>
+                        Запомните меня
+                    </label>
+                    <a href="#" class="restore">Я забыл пароль!</a>
+                </p>
+                <button class="button" type="submit">Войти</button>
+            </form>
+            <button class="modal-close" type="button">Закрыть</button>
+        </section>*@
     <script src="js/popup.js"></script>
 
 
 
-<div class="container body-content">
-    @RenderBody()
-    <hr />
-    <footer>
-        <p>&copy; 2019 - Internet_shop</p>
-    </footer>
-</div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2019 - Internet_shop</p>
+        </footer>
+    </div>
 
 
 </body>

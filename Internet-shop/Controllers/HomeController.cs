@@ -23,10 +23,13 @@ namespace Internet_shop.Controllers
         public async Task<IActionResult> CreateHuman(Human human)
         {
             db_human.Humen.Add(human);
-            await db.SaveChangesAsync();
+            await db_human.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-
+        public async Task<IActionResult> ShowHuman()
+        {
+            return View(await db_human.Humen.ToListAsync());
+        }
         public HomeController(ShirtContext context, HumanContext human_context)
         {
             db = context;

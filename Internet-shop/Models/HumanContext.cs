@@ -7,7 +7,7 @@ namespace Internet_shop.Models
     {
         public DbSet<Human> Humen { get; set; }
         public HumanContext(DbContextOptions<HumanContext> options)
-        : base(options)
+            : base(options)
         {
             Database.EnsureCreated();
         }
