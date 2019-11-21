@@ -11,6 +11,6 @@ namespace Internet_shop.Models
         {
             Database.EnsureCreated();
         }
-}
+    }
 
 }
