@@ -8,7 +8,7 @@ body {
     font-weight: 400;
     color:#000;
 
-    background-color: #63ada163;
+    background: rgb(240, 238, 236);
 }
 
 .visually-hidden,
@@ -68,6 +68,10 @@ ul {
     padding-left: 10px;
 }
 
+.type-item:hover p, .type-item:focus{
+    border-bottom:3px #000 solid;
+}
+
 .user-navigation {
     display: flex;
 }
@@ -79,19 +83,66 @@ ul {
 .picker {
     display: flex;
     justify-content: space-between;
+    background: #fff;
+   
 }
 
 .items-list {
     display:flex;
     margin: 0;
+    position: relative;
 }
 
 .items-list li {
     margin-left:10px;
+   
 }
 
-.items-list li:first-child {
+.search-form {
+    display: flex;
+}
+
+.search-button {
+    margin-top: 18px;
+    width:50px;
+    height: 26px;
+    border:0;
+    background: rgb(102, 149, 236);
+}
+
+.search-button svg {
+    padding-top: 4px;
+}
+
+.items-list>li:first-child {
     margin-left: 0;
+}
+
+.items-catalog {
+    position: absolute;
+    display: none;
+    width: 1200px;
+    left:0px;
+    background: #fff;
+    justify-content: space-between;
+}
+
+.goods li {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.items-column h4 {
+    margin-bottom: 17px;
+    margin-left: 10px;
+}
+
+.items-column:nth-child(2), .items-column:nth-child(3){
+    margin-right: 140px;
+}
+
+.items-list li:hover .items-catalog{
+    display: flex;
 }
 
 /* Всплывашки*/
@@ -99,9 +150,8 @@ ul {
     position: fixed;
     display: none;
     color:#000;
-
-    background-color: #d0d0d0;
-    background-image: url("../img/pattern-light.png");
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(109,12,117,0.4797269249496674) 60%, rgba(0,212,255,1) 100%);
     background-position: 0 0;
     background-repeat: repeat;
     box-shadow: 0 30px 50px rgba(0,0,0,0.7);

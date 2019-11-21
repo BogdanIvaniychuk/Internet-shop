@@ -17,13 +17,6 @@ namespace Internet_shop.Models
 
         public int Id { get { return id; } set { id = value; } }
 
-        public Human(string name, string mail, string password)
-        {
-            _id++;
-            id = _id;
-            Name = name;
-            Mail = mail;
-            Password = password;
-        }
+
     }
 }

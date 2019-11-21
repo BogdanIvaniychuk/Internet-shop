@@ -15,6 +15,11 @@ namespace Internet_shop.Controllers
 
         private HumanContext db_human;
 
+        public async Task<IActionResult> ShowHuman()
+        {
+            return View(await db_human.Human.ToListAsync());
+        }
+
         public IActionResult CreateHuman()
         {
             return View();
@@ -22,14 +27,11 @@ namespace Internet_shop.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateHuman(Human human)
         {
-            db_human.Humen.Add(human);
+            db_human.Human.Add(human);
             await db_human.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-        public async Task<IActionResult> ShowHuman()
-        {
-            return View(await db_human.Humen.ToListAsync());
-        }
+
         public HomeController(ShirtContext context, HumanContext human_context)
         {
             db = context;
