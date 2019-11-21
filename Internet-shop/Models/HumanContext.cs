@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Internet_shop.Models;
 
-namespace Internet-shop.Models
+namespace Internet_shop.Models
 {
     public class HumanContext : DbContext
     {
@@ -11,6 +11,6 @@ namespace Internet-shop.Models
         {
             Database.EnsureCreated();
         }
-}
+    }
 
 }
