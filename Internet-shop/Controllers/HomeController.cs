@@ -16,7 +16,7 @@ namespace Internet_shop.Controllers
         {
             db = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Show()
         {
             return View(await db.Shirts.ToListAsync());
         }
@@ -31,11 +31,10 @@ namespace Internet_shop.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-        public IActionResult Index2()
+        public IActionResult Index()
         {
             return View();
         }
-
         public IActionResult NewInd()
         {
             return View();
