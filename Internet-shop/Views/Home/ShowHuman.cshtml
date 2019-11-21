@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Internet_shop.Models.Human>
+@{
+    ViewData["Title"] = "ShowHuman";
+}
+
+<h2>ShowHuman</h2>
+<table class="table">
+    <tr><td>Імя</td><td>Mail</td><td>Password</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Name</td><td>@item.Mail</td><td>@item.Password</td></tr>
+    }
+</table>

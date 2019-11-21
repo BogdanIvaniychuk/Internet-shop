@@ -5,7 +5,7 @@ namespace Internet_shop.Models
 {
     public class HumanContext : DbContext
     {
-        public DbSet<Human> Humen { get; set; }
+        public DbSet<Human> Human { get; set; }
         public HumanContext(DbContextOptions<HumanContext> options)
         : base(options)
         {
