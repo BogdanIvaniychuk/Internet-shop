@@ -1,5 +1,4 @@
-﻿@model Internet_shop.Models.Human
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -79,6 +78,8 @@
                              <li><a href="#">Сумки</a></li>
                              <li><a href="#">Шарфы и платки</a></li>
                          </ul>
+                         </div>
+                    </div>
             </li>
              <li>
                  <p class="choose-item">
@@ -358,29 +359,9 @@
         </section>
     </div>
 
-    <section class="modal modal-login">
-        <h2>Личный кабинет</h2>
-        <p class="modal-description">Введите свой логин и пароль.</p>
-        <form asp-action="create" asp-controller="home">
-            <div class="form-group">
-                <label asp-for="Name" class="control-label">Ім'я</label>
-                <input type="text" asp-for="Name" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Mail" class="control-label">Пошта</label>
-                <input type="text" asp-for="Mail" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label">Пароль</label>
-                <input type="text" asp-for="Password" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Ввійти" class="btn btn-default" />
-            </div>
-        </form>
-    </section>
+    
 
-    @*<section class="modal modal-login ">
+    <section class="modal modal-login ">
             <h2>Личный кабинет</h2>
             <p class="modal-description">Введите свой логин и пароль.</p>
             <form action="form.php" class="login-form" method="POST">
@@ -404,7 +385,7 @@
                 <button class="button" type="submit">Войти</button>
             </form>
             <button class="modal-close" type="button">Закрыть</button>
-        </section>*@
+        </section>
     <script src="js/popup.js"></script>
 
 

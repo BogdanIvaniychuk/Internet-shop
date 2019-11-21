@@ -7,7 +7,7 @@ namespace Internet_shop.Models
 {
     public class Shirt
     {
-        private static int count = 0;
+        //private static int count = 0;
         private int id;
         private string name;
         private int price;

@@ -3,7 +3,7 @@ namespace Internet_shop.Models
 {
     public class Human
     {
-        private static int _id = 0;
+        //private static int _id = 0;
         private int id;
         private string name;
         private string mail;
