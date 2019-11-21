@@ -17,7 +17,7 @@ namespace Internet_shop.Controllers
 
         public async Task<IActionResult> ShowHuman()
         {
-            return View(await db_human.Humen.ToListAsync());
+            return View(await db_human.Human.ToListAsync());
         }
 
         public IActionResult CreateHuman()
@@ -27,7 +27,7 @@ namespace Internet_shop.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateHuman(Human human)
         {
-            db_human.Humen.Add(human);
+            db_human.Human.Add(human);
             await db_human.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -60,19 +60,7 @@ namespace Internet_shop.Controllers
         {
             return View();
         }
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
 
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
 
         public IActionResult Privacy()
         {
