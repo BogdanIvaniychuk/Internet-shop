@@ -12,9 +12,25 @@ namespace Internet_shop.Controllers
     public class HomeController : Controller
     {
         private ShirtContext db;
-        public HomeController(ShirtContext context)
+
+        private HumanContext db_human;
+
+        public IActionResult CreateHuman()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateHuman(Human human)
+        {
+            db_human.Humen.Add(human);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        public HomeController(ShirtContext context, HumanContext human_context)
         {
             db = context;
+            db_human = human_context;
         }
         public async Task<IActionResult> Show()
         {

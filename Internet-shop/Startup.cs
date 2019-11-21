@@ -32,7 +32,7 @@ namespace Internet_shop
             // добавляем контекст MobileContext в качестве сервиса в приложение
             services.AddDbContext<ShirtContext>(options =>
                 options.UseSqlServer(connection1));
-            services.AddDbContext<ShirtContext>(options =>
+            services.AddDbContext<HumanContext>(options =>
                 options.UseSqlServer(connection2));
             services.AddMvc();
         }
