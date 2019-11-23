@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Internet_shop.Models.Shirt>
 @{
-    ViewBag.Title = "Все майки";
+    ViewData["Title"] = "Все майки";
 }
-<a asp-action="Create">Добавить модель</a>
-<table class="table">
+<a asp-action="show">Добавить модель</a>
+<table class="table" border="1">
     <tr><td>Модель</td><td>Цена</td><td>Описание</td><td>Колір</td><td>Розмір</td><td>Картинка</td></tr>
     @foreach (var item in Model)
     {

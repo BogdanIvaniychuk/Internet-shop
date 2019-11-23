@@ -17,7 +17,7 @@ namespace Internet_shop.Controllers
 
         public async Task<IActionResult> ShowHuman()
         {
-            return View(await db_human.Human.ToListAsync());
+            return View(await db_human.Humen.ToListAsync());
         }
 
         public IActionResult CreateHuman()
@@ -27,7 +27,7 @@ namespace Internet_shop.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateHuman(Human human)
         {
-            db_human.Human.Add(human);
+            db_human.Humen.Add(human);
             await db_human.SaveChangesAsync();
             return RedirectToAction("Index");
         }
