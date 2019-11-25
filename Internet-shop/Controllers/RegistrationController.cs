@@ -32,6 +32,25 @@ namespace Internet_shop.Controllers
             return View(await db_human.Humen.ToListAsync());
         }
 
-        public 
+        [HttpPost]
+        public async Task<IActionResult> Authorization(User user)
+        {
+            bool f = false;
+            foreach(var item in db_human.Humen)
+            {
+                if (item.Mail == user.Mail && item.Password == user.Password)
+                {
+                    f = true;
+                    break;
+                }
+            }
+
+            if (f)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
+            return RedirectToAction("CreateHuman");
+        }
     }
 }
