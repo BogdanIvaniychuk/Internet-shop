@@ -24,12 +24,14 @@ namespace Internet_shop.Controllers
         {
             db_human.Humen.Add(human);
             await db_human.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> ShowHuman()
         {
             return View(await db_human.Humen.ToListAsync());
         }
+
+        public 
     }
 }
