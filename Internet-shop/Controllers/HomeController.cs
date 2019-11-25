@@ -11,40 +11,20 @@ namespace Internet_shop.Controllers
 {
     public class HomeController : Controller
     {
-        private ShirtContext db;
+        private ShirtContext db;      
+               
+        public HomeController(ShirtContext context) { db = context; }
 
-        private HumanContext db_human;
-
-        public async Task<IActionResult> ShowHuman()
-        {
-            return View(await db_human.Humen.ToListAsync());
-        }
-
-        public IActionResult CreateHuman()
-        {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> CreateHuman(Human human)
-        {
-            db_human.Humen.Add(human);
-            await db_human.SaveChangesAsync();
-            return RedirectToAction("Index");
-        }
-
-        public HomeController(ShirtContext context, HumanContext human_context)
-        {
-            db = context;
-            db_human = human_context;
-        }
         public async Task<IActionResult> Show()
         {
             return View(await db.Shirts.ToListAsync());
         }
+
         public IActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(Shirt shirt)
         {
@@ -52,16 +32,17 @@ namespace Internet_shop.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
         public IActionResult Index()
         {
             return View();
         }
+
         public IActionResult NewInd()
         {
             return View();
         }
-
-
+        
         public IActionResult Privacy()
         {
             return View();
