@@ -5,44 +5,16 @@
 
 
     <div class="shirts">
-        <div class="shirt-item">
-            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="330px" />
+        @foreach (var item in Model)
+        {
+         <div class="shirt-item">
+            <img src="@item.Image" alt="Alternate Text" width="330px" />
             <p class="item-description">
-                <span class="item-price">Price</span>
-                Name of brand
+                <span class="item-price">@item.Price</span>
+                @item.Name
             </p>
-        </div>
-        <div class="shirt-item">
-            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="236px" />
-            <p class="item-description">
-                <span class="item-price">Price</span>
-                Name of brand
-            </p>
-        </div>
-        <div class="shirt-item">
-            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="236px" />
-            <p class="item-description">
-                <span class="item-price">Price</span>
-                Name of brand
-            </p>
-        </div>
-        <div class="shirt-item">
-            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="236px" />
-            <p class="item-description">
-                <span class="item-price">Price</span>
-                Name of brand
-            </p>
-
-        </div>
-        <div class="shirt-item">
-            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="236px" />
-            <p class="item-description">
-                <span class="item-price">Price</span>
-                Name of brand
-            </p>
-
-        </div>
-
+         </div>
+        }
     </div>
 
 
