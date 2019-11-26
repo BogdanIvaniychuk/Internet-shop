@@ -4,7 +4,7 @@ body {
 
     font-family: 'Roboto', sans-serif;
     line-height: 22px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color:#000;
 
@@ -144,6 +144,31 @@ ul {
 .items-list li:hover .items-catalog{
     display: flex;
 }
+
+
+/*T-shirts list*/
+
+.shirts{ 
+   display:flex;
+   flex-wrap:wrap;
+   margin-top:20px;
+
+}
+
+.shirt-item {
+    padding:0 10px;
+}
+
+.shirt-item img {
+    width:280px;
+}
+
+.item-price {
+    display:block;
+    font-size:16px;
+    color:#fc1515;
+}
+
 
 /* Всплывашки*/
 .modal {

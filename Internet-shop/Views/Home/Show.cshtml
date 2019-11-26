@@ -2,14 +2,47 @@
 @{
     ViewData["Title"] = "Показать маечку";
 }
-@section Footer {
-    Все майки
-}
-<a asp-action="show">Добавить модель</a>
-<table class="table" border="1">
-    <tr><td>Модель</td><td>Цена</td><td>Описание</td><td>Колір</td><td>Розмір</td><td>Картинка</td></tr>
-    @foreach (var item in Model)
-    {
-        <tr><td>@item.Name</td><td>@item.Price</td><td>@item.Description</td><td>@item.Color</td><td>@item.Size</td><td><img src="@item.Image" /></td></tr>
-    }
-</table>
+
+
+    <div class="shirts">
+        <div class="shirt-item">
+            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="330px" />
+            <p class="item-description">
+                <span class="item-price">Price</span>
+                Name of brand
+            </p>
+        </div>
+        <div class="shirt-item">
+            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="236px" />
+            <p class="item-description">
+                <span class="item-price">Price</span>
+                Name of brand
+            </p>
+        </div>
+        <div class="shirt-item">
+            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="236px" />
+            <p class="item-description">
+                <span class="item-price">Price</span>
+                Name of brand
+            </p>
+        </div>
+        <div class="shirt-item">
+            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="236px" />
+            <p class="item-description">
+                <span class="item-price">Price</span>
+                Name of brand
+            </p>
+
+        </div>
+        <div class="shirt-item">
+            <img src="~/images/Cluse La Boheme CL18203.jpg" alt="Alternate Text" width="236px" />
+            <p class="item-description">
+                <span class="item-price">Price</span>
+                Name of brand
+            </p>
+
+        </div>
+
+    </div>
+
+
