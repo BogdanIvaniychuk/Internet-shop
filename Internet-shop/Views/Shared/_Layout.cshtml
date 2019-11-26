@@ -1,5 +1,4 @@
-﻿@model Internet_shop.Models.User
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -33,7 +32,7 @@
                 <ul class="user-navigation">
                     <li class="user-item">
                         <p>
-                            <a class="login-link" href="">Войти</a>
+                            <a asp-area="" asp-controller="Registration" asp-action="Authorization">Войти</a>
                         </p>
                     </li>
                     <li class="user-item">
@@ -362,7 +361,7 @@
 
 
 
-    <section class="modal modal-login ">
+    @*<section class="modal modal-login ">
         <h2>Личный кабинет</h2>
         <p class="modal-description">Введите свой логин и пароль.</p>
         <form asp-action="Authorization" asp-controller="Registration" class="login-form">
@@ -389,7 +388,7 @@
         </form>
             <button class="modal-close" type="button">Закрыть</button>
         </section>
-        <script src="js/popup.js"></script>
+        <script src="js/popup.js"></script>*@
 
 
 
