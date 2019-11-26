@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Internet_shop.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Internet_shop.Controllers
 {
@@ -32,6 +33,11 @@ namespace Internet_shop.Controllers
             return View(await db_human.Humen.ToListAsync());
         }
 
+        public IActionResult Authorization()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Authorization(User user)
         {
@@ -52,5 +58,7 @@ namespace Internet_shop.Controllers
             
             return RedirectToAction("CreateHuman");
         }
+
+         
     }
 }

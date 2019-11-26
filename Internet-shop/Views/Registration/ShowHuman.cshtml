@@ -5,8 +5,8 @@
 @section Footer {
     Все человеки
 }
-<a asp-action="showhuman">Добавить модель</a>
-<table class="table">
+<a asp-controller="Registration" asp-action="ShowHuman">Добавить модель</a>
+<table  class="table">
     <tr><td>Ім'я</td><td>Пошта</td><td>Пароль</td></tr>
     @foreach (var item in Model)
     {
