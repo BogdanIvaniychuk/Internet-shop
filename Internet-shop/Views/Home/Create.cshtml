@@ -1,4 +1,4 @@
-﻿@model Internet_shop.Models.Thing
+﻿@model Internet_shop.Models.Tmpshka
 @{
     ViewData["Title"] = "Добачить маечку";
 }
@@ -31,14 +31,10 @@
         <input type="text" asp-for="Image" class="form-control" />
     </div>
     <div>
-        @using (Html.BeginForm("Create", "Home", FormMethod.Post))
-        {
-            @Html.DropDownList("Things", Html.GetEnumSelectList(typeof(Things)))
-            <br />
-        }
+        <label asp-for="num">Вид одягу</label>
+        <select asp-for="num" asp-items="Html.GetEnumSelectList<Things>()"></select>
     </div>
     <div class="form-group">
         <input type="submit" value="Send" class="btn btn-default" />
     </div>
 </form>
-

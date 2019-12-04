@@ -11,9 +11,10 @@ namespace Internet_shop.Controllers
 {
     public class HomeController : Controller
     {
-        private ShirtContext db;      
-               
-        public HomeController(ShirtContext context) { db = context; }
+        private ShirtContext db;
+        //private JeansContext db_jea;
+
+        public HomeController(ShirtContext context /*JeansContext con_jea*/) { db = context; /*db_jea = con_jea;*/ }
 
         public async Task<IActionResult> Show()
         {
@@ -26,12 +27,34 @@ namespace Internet_shop.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Thing thing)
+        public async Task<IActionResult> Create(Tmpshka tmpshka)
         {
             //db.Shirts.Add(shirt);
             //await db.SaveChangesAsync();
+
+            switch (Convert.ToString(tmpshka.num))
+            {
+                case "Shirt":
+                    {
+                        Shirt shirt = tmpshka.ConvertToShirt();
+                        db.Shirts.Add(shirt); break;
+                    }
+                //case "Jeans":
+                //    {
+                //        Jeans jeans = tmpshka.ConvertToJeans();
+                //        db_jea.jeans.Add(jeans); break;
+                //    }
+
+                    //----------------------------------------------
+                    //case 1:
+                    //    db.Shirts.Add(thing.ConvertToShirt()); break;
+
+                    // -----------------------------------------------------------------
+            }
             
-            return RedirectToAction("Index");
+
+            await db.SaveChangesAsync();
+            return RedirectPermanent("~/Home/Index");
         }
 
         public IActionResult Index()

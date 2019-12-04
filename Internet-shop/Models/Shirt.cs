@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Internet_shop.Models
 {
-    public class Shirt : Thing
+    public class Shirt
     {
         //private static int count = 0;
         private int id;

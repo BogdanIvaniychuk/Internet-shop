@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Internet_shop.Models
 {
-    public  class Thing
+
+    public class Thing
     {
         //private static int count = 0;
         private int id;
@@ -24,13 +25,4 @@ namespace Internet_shop.Models
         public string Size { get { return size; } set { size = value; } }
         public string Image { get { return image; } set { image = value; } }
     }
-
-    public enum Things
-    {
-        [Display(Name = "Майки")]
-        Shirt,
-        [Display(Name = "Джинси")]
-        Jeans
-    }
-
 }
