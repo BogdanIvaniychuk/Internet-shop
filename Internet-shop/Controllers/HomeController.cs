@@ -26,10 +26,11 @@ namespace Internet_shop.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Shirt shirt)
+        public async Task<IActionResult> Create(Thing thing)
         {
-            db.Shirts.Add(shirt);
-            await db.SaveChangesAsync();
+            //db.Shirts.Add(shirt);
+            //await db.SaveChangesAsync();
+            
             return RedirectToAction("Index");
         }
 
