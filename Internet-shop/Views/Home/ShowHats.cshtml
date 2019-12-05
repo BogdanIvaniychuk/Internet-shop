@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Internet_shop.Models.Hat>
+@{
+    ViewData["Title"] = "Показать головні убори";
+}
+
+
+<div class="shirts">
+    @foreach (var item in Model)
+    {
+        <div class="shirt-item">
+            <img src="@item.Image" alt="Alternate Text" width="330px" />
+            <p class="item-description">
+                <span class="item-price">@item.Price</span>
+                @item.Name
+            </p>
+        </div>
+    }
+</div>

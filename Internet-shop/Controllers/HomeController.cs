@@ -13,8 +13,9 @@ namespace Internet_shop.Controllers
     {
         private ShirtContext db;
         private JeansContext db_jea;
+        private HatContext db_hat;
 
-        public HomeController(ShirtContext context, JeansContext con_jea) { db = context; db_jea = con_jea; }
+        public HomeController(ShirtContext context, JeansContext con_jea, HatContext con_hat) { db = context; db_jea = con_jea; db_hat = con_hat; }
 
         public async Task<IActionResult> Show()
         {
@@ -26,6 +27,11 @@ namespace Internet_shop.Controllers
             return View(await db_jea.jeans.ToListAsync());
         }
 
+        public async Task<IActionResult> ShowHats()
+        {
+            return View(await db_hat.Hats.ToListAsync());
+        }
+
         public IActionResult Create()
         {
             return View();
@@ -34,9 +40,6 @@ namespace Internet_shop.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Tmpshka tmpshka)
         {
-            //db.Shirts.Add(shirt);
-            //await db.SaveChangesAsync();
-
             switch (Convert.ToString(tmpshka.num))
             {
                 case "Shirt":
@@ -53,16 +56,14 @@ namespace Internet_shop.Controllers
                         await db_jea.SaveChangesAsync();
                         break;
                     }
-
-                    //----------------------------------------------
-                    //case 1:
-                    //    db.Shirts.Add(thing.ConvertToShirt()); break;
-
-                    // -----------------------------------------------------------------
-            }
-            
-
-            
+                case "Hats":
+                    {
+                        Hat hat = tmpshka.ConvertToHat();
+                        db_hat.Hats.Add(hat);
+                        await db_hat.SaveChangesAsync();
+                        break;
+                    }
+            }                       
             return RedirectPermanent("~/Home/Index");
         }
 

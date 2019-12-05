@@ -27,16 +27,21 @@ namespace Internet_shop
         public void ConfigureServices(IServiceCollection services)
         {
             // получаем строку подключения из файла конфигурации
-            string connection1 = Configuration.GetConnectionString("ShirtConnection");
-            string connection2 = Configuration.GetConnectionString("HumanConnection");
-            string connection3 = Configuration.GetConnectionString("JeansConnection");
+            string Shirt = Configuration.GetConnectionString("ShirtConnection");
+            string Human = Configuration.GetConnectionString("HumanConnection");
+            string Jeans = Configuration.GetConnectionString("JeansConnection");
+            string Hats = Configuration.GetConnectionString("HatsConnection");
+
             // добавляем контекст MobileContext в качестве сервиса в приложение
             services.AddDbContext<ShirtContext>(options =>
-                options.UseSqlServer(connection1));
+                options.UseSqlServer(Shirt));
             services.AddDbContext<HumanContext>(options =>
-                options.UseSqlServer(connection2));
+                options.UseSqlServer(Human));
             services.AddDbContext<JeansContext>(options =>
-                options.UseSqlServer(connection3));
+                options.UseSqlServer(Jeans));
+            services.AddDbContext<HatContext>(options =>
+                options.UseSqlServer(Hats));
+
             services.AddMvc();
         }
 

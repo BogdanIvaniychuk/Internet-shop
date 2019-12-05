@@ -11,7 +11,9 @@ namespace Internet_shop.Models
         [Display(Name = "Майки")]
         Shirt,
         [Display(Name = "Джинси")]
-        Jeans
+        Jeans,
+        [Display(Name = "Головные уборы")]
+        Hats
     }
     public class Tmpshka : Thing
     {
@@ -37,6 +39,13 @@ namespace Internet_shop.Models
         public Jeans ConvertToJeans()
         {
             Jeans tmp = new Jeans();
+            tmp.Copy(Convert());
+            return tmp;
+        }
+
+        public Hat ConvertToHat()
+        {
+            Hat tmp = new Hat();
             tmp.Copy(Convert());
             return tmp;
         }
