@@ -29,11 +29,14 @@ namespace Internet_shop
             // получаем строку подключения из файла конфигурации
             string connection1 = Configuration.GetConnectionString("ShirtConnection");
             string connection2 = Configuration.GetConnectionString("HumanConnection");
+            string connection3 = Configuration.GetConnectionString("JeansConnection");
             // добавляем контекст MobileContext в качестве сервиса в приложение
             services.AddDbContext<ShirtContext>(options =>
                 options.UseSqlServer(connection1));
             services.AddDbContext<HumanContext>(options =>
                 options.UseSqlServer(connection2));
+            services.AddDbContext<JeansContext>(options =>
+                options.UseSqlServer(connection3));
             services.AddMvc();
         }
 

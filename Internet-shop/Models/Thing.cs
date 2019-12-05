@@ -24,5 +24,16 @@ namespace Internet_shop.Models
         public string Color { get { return color; } set { color = value; } }
         public string Size { get { return size; } set { size = value; } }
         public string Image { get { return image; } set { image = value; } }
+
+
+        public void Copy(Thing tmp)
+        {
+            Name = tmp.Name;
+            Price = tmp.Price;
+            Description = tmp.Description;
+            Color = tmp.Color;
+            Size = tmp.Size;
+            Image = tmp.Image;
+        }
     }
 }

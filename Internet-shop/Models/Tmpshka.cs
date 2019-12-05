@@ -16,27 +16,28 @@ namespace Internet_shop.Models
     public class Tmpshka : Thing
     {
         public Things num { get; set; }
-        public Shirt ConvertToShirt()
+
+        public Thing Convert()
         {
-            Shirt tmp = new Shirt();
+            Thing tmp = new Thing();
             tmp.Name = Name;
             tmp.Price = Price;
             tmp.Description = Description;
             tmp.Color = Color;
             tmp.Size = Size;
             tmp.Image = Image;
-
+            return tmp;
+        }
+        public Shirt ConvertToShirt()
+        {
+            Shirt tmp = new Shirt();
+            tmp.Copy(Convert());
             return tmp;
         }
         public Jeans ConvertToJeans()
         {
             Jeans tmp = new Jeans();
-            tmp.Name = Name;
-            tmp.Price = Price;
-            tmp.Description = Description;
-            tmp.Color = Color;
-            tmp.Size = Size;
-            tmp.Image = Image;
+            tmp.Copy(Convert());
             return tmp;
         }
 
