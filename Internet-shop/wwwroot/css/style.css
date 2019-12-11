@@ -302,3 +302,49 @@ ul {
     90% {transform: translateY(-10px);}
     100% {transform: translateY(0);}
 }
+
+/*Authorization*/
+.control-label login{
+    margin-right: 14px;
+}
+
+.login-form {
+    text-align: center;
+    border: 1px solid #000;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.login-password-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.restore {
+    margin-left: 10px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.btn btn-default {
+    margin-right: 10px;
+}
+
+/*CreateHuman*/
+.name {
+    margin-left: 31px;
+}
+
+.mail {
+    margin-left: 7px;
+}
+
+.createhuman {
+    text-align: center;
+    border: 1px solid #000;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}

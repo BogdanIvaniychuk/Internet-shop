@@ -7,24 +7,24 @@
 <p class="modal-description">Введите свой логин и пароль.</p>
 <form asp-action="Authorization" asp-controller="Registration" class="login-form">
     <div class="form-group">
-        <label asp-for="Mail" class="control-label">Логин</label>
+        <label asp-for="Mail" class="control-label login">Логин</label>
         <input type="text" asp-for="Mail" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Password" class="control-label">Пароль</label>
+        <label asp-for="Password" class="control-label password">Пароль</label>
         <input type="password" asp-for="Password" class="form-control" />
     </div>
-    <p class="login-password-info">
+    <div class="login-password-info">
         <label class="login-checkbox">
             <input type="checkbox" name="remember" class="visually-hidden">
             <span class="checkbox-indicator"></span>
             Запомните меня
         </label>
-        <a href="#" class="restore"><br />Я забыл пароль!</a>
-    </p>
+        <a href="#" class="restore">Я забыл пароль!</a>
+    </div>
     <div class="form-group">
         <input type="submit" value="Войти" class="btn btn-default" />
-        <a asp-area="" asp-controller="Registration" asp-action="CreateHuman">Регістрація</a>
+        <a asp-area="" asp-controller="Registration" asp-action="CreateHuman">Регистрация</a>
     </div>
 </form>
 <button class="modal-close" type="button">Закрыть</button>

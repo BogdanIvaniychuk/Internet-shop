@@ -6,13 +6,13 @@
     Добавление человека
 }
 <h2>CreateHuman</h2>
-<form asp-action="CreateHuman" asp-controller="Registration">
+<form asp-action="CreateHuman" class="createhuman" asp-controller="Registration">
     <div class="form-group">
-        <label asp-for="Name" class="control-label">Ім'я</label>
+        <label asp-for="Name" class="control-label name">Ім'я</label>
         <input type="text" asp-for="Name" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Mail" class="control-label">Пошта</label>
+        <label asp-for="Mail" class="control-label mail">Пошта</label>
         <input type="text" asp-for="Mail" class="form-control" />
     </div>
     <div class="form-group">
